@@ -3,9 +3,18 @@ Input: a List of integers where every int except one shows up twice
 Returns: an integer
 '''
 def single_number(arr):
-    # Your code here
+    hash = {}
 
-    pass
+    for num in arr:
+        if num in hash:
+            hash[num] += 1
+        else:
+            hash[num] = 1
+
+    for num in hash:
+        if hash[num] == 1:
+            return num
+
 
 
 if __name__ == '__main__':
